@@ -18,13 +18,19 @@ namespace WebApp.Controllers
             return View();
         }
 
-        // Criando uma nova view
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        // Criando uma nova view MinhaTela
         public IActionResult MinhaTela()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        // Criando uma nova view LoginTela
+        public IActionResult LoginTela()
         {
             return View();
         }
