@@ -1,27 +1,20 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-<div class="card">
+﻿<div class="card">
     <div class="card-header">
         <h2>Cadastro de Produto</h2>
     </div>
-
     <div class="card-body">
         <form action="/Produto/Salvar" method="post">
-            <label>Nome:</label>
-            <input type="text" name="Nome" placeholder="Digite o nome do produto" />
+            <label>Nome</label>
+            <input type="text" name="Nome" class="form-control" placeholder="Digite o nome do produto"/>
 
             <br />
 
-            <label>Quantido em estoque:</label>
-            <input type="text" name="QtdEstoque" placeholder="Digite a quantidade de produtos" />
+            <label>Quantidade em Estoque</label>
+            <input type="number" name="QtdEstoque" class="form-control" placeholder="Coloque a quantidade do produto" />
 
             <br />
 
-            <button type="submit">Salvar produto</button>
+            <button type="submit" class="btn btn-info"> Salvar </button>
         </form>
     </div>
 </div>
