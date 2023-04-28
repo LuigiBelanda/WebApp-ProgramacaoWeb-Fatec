@@ -1,0 +1,13 @@
+﻿namespace WebApp.Models
+{
+    public class ClientesModel
+    {
+        // get e set abstraídos
+        // { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Telefone { get; set; }
+        
+        
+    }
+}

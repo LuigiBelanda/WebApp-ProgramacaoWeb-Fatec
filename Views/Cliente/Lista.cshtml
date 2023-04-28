@@ -1,4 +1,6 @@
-﻿<div class="row">
+﻿@model List<WebApp.Models.ClientesModel>
+
+<div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
@@ -14,8 +16,7 @@
                         <select name="filtro" class="form-control">
                             <option value="0">Todos as opções</option>
                             <option value="id">Por Código</option>
-                            <option value="nome">Por Nome</option>
-                            <option value="qtd">Por CPF</option>
+                            <option value="nome">Por Nome</option>       
                         </select>
                     </div>
 
@@ -36,15 +37,32 @@
                         <tr>
                             <th>Código do Cliente</th>
                             <th>Nome</th>
-                            <th>CPF</th>
+                            <th>Telefone</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
+
+
+                        @foreach (var cliente in Model)
+                        {
+                            <tr>
+                                <td>@cliente.Id</td>
+                                <td>@cliente.Nome</td>
+                                <td>@cliente.Telefone</td>
+
+                                <td>
+                                    <a href="/Cliente/Editar/@cliente.Id" class="btn btn-warning">Editar</a>
+                                    <a href="/Cliente/Excluir/@cliente.Id" class="btn btn-danger">Excluir</a>
+                                </td>
+                            </tr>
+                        }
+
+
                         <tr>
                             <td>1</td>
                             <td>Ana</td>
-                            <td>150.150.152-78</td>
+                            <td>99999999</td>
                             <td>
                                 <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
                                 <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
@@ -54,7 +72,7 @@
                         <tr>
                             <td>2</td>
                             <td>Bruna</td>
-                            <td>160.160.162-78</td>
+                            <td>11111111</td>
                             <td>
                                 <a href="/Cliente/Editar/2" class="btn btn-warning">Editar</a>
                                 <a href="/Cliente/Excluir/2" class="btn btn-danger">Excluir</a>
@@ -64,7 +82,7 @@
                         <tr>
                             <td>3</td>
                             <td>Carla</td>
-                            <td>170.170.172-78</td>
+                            <td>2222222</td>
                             <td>
                                 <a href="/Cliente/Editar/3" class="btn btn-warning">Editar</a>
                                 <a href="/Cliente/Excluir/3" class="btn btn-danger">Excluir</a>
@@ -74,7 +92,7 @@
                         <tr>
                             <td>4</td>
                             <td>Daniela</td>
-                            <td>180.180.182-78</td>
+                            <td>33333333</td>
                             <td>
                                 <a href="/Cliente/Editar/4" class="btn btn-warning">Editar</a>
                                 <a href="/Cliente/Excluir/4" class="btn btn-danger">Excluir</a>
