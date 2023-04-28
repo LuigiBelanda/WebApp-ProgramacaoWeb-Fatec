@@ -1,9 +1,11 @@
-﻿<div class="card">
+﻿@model WebApp.Models.ProdutosModel
+
+<div class="card">
     <div class="card-header">
         <h2>Cadastro de Produto</h2>
     </div>
     <div class="card-body">
-        <form action="/Produto/Salvar" method="post">
+        <form action="/Produto/SalvarDados" method="post">
             <label>Nome</label>
             <input type="text" name="Nome" class="form-control" placeholder="Digite o nome do produto"/>
 

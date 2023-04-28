@@ -7,16 +7,34 @@ namespace WebApp.Controllers
 {
     public class ProdutoController : Controller
     {
+        public static List<ProdutosModel> db = new List<ProdutosModel>();
+
         // Criando a rota para listar os produtos cadastrados
         public IActionResult Lista()
         {
-            return View();
+            return View( db );
         }
 
         // Criando a rota para cadastrar os produtos
         public IActionResult Cadastrar()
         {
-            return View();
+            ProdutosModel model = new ProdutosModel();
+
+            return View( model );
+        }
+
+        [HttpPost]
+        public IActionResult SalvarDados(ProdutosModel produto)
+        {
+            if (produto.Id == 0)
+            {
+                Random rand = new Random();
+                produto.Id = rand.Next(1, 9999);
+
+                db.Add(produto);
+            }
+
+            return RedirectToAction("Lista");
         }
     }
 }
