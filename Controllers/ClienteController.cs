@@ -66,7 +66,6 @@ namespace WebApp.Controllers
             {
                 return RedirectToAction("Lista");
             }
-
         }
     }
 }
