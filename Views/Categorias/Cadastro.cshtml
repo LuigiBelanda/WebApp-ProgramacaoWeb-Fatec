@@ -1,0 +1,14 @@
+﻿@model WebApp.Tabelas.Categorias
+
+<form action="/Categorias/SalvarDados" method="post">
+    <label>Nome:</label>
+    <br />
+    <input name="Nome" type="text" />
+    <br />
+    <select name="Ativo">
+        <option value="true">Ativo</option>
+        <option value="false">Inativo</option>
+    </select>
+
+    <button type="submit">Salvar dados</button>
+</form>
