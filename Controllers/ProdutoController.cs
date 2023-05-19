@@ -10,9 +10,34 @@ namespace WebApp.Controllers
         public static List<ProdutosModel> db = new List<ProdutosModel>();
 
         // Criando a rota para listar os produtos cadastrados
-        public IActionResult Lista()
+        public IActionResult Lista(String filtro, string busca)
         {
-            return View( db );
+            if ( string.IsNullOrEmpty(busca) )
+            {
+                return View(db);
+            } 
+            else
+            {
+                switch ( filtro ) 
+                {
+                    case "id":
+                        return View(db.Where(a => a.Id.ToString() == busca).ToList());
+                        break;
+
+                    case "nome":
+                        return View(db.Where(a => a.Nome.Contains(busca)).ToList());
+                        break;
+
+                    case "qtd":
+                        return View(db.Where(a => a.QtdEstoque.ToString() == busca).ToList());
+                        break;
+
+                    default:
+                        return View(db.Where(a => a.Id.ToString() == busca || a.Nome.Contains(busca) || a.QtdEstoque.ToString() == busca).ToList());
+                        break;
+                }
+            }
+            
         }
 
         // Criando a rota para cadastrar os produtos
